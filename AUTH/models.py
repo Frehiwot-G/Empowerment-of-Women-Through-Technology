@@ -35,7 +35,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=254, null=True, blank=True)
     last_name = models.CharField(max_length=254, null=True, blank=True)
     email = models.EmailField(max_length=254, unique=True)
-    ID_number=models.CharField(max_length=254,unique=True, null=True, blank=True)
+    ID_number=models.CharField(max_length=254,unique=True,primary_key=True, blank=True)
     is_staff = models.BooleanField(default=False)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -51,7 +51,8 @@ class User(AbstractBaseUser):
     def get_email(self):
         return self.email
 
-class Care_giver(AbstractBaseUser):
+class Care_giver(models.Model):
+    ID= models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=254, null=True, blank=True)
     last_name = models.CharField(max_length=254, null=True, blank=True)
     email = models.EmailField(max_length=254, unique=True)
