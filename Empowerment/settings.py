@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AUTH',
+    'women_in_tech'
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [(os.path.join(BASE_DIR, 'templates')),],
+        # 'DIRS': [TEMPLATE_DIR],
         # 'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {

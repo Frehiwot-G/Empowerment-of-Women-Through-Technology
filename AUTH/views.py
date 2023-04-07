@@ -18,12 +18,12 @@ def register_user(request):
 
             messages.success(request, f'Your account has been created. You can log in now!')
             # return redirect('login')
-            return render(request, 'login.html')
+            return render(request, 'AUTH/login.html')
     else:
         form = UserRegistrationForm()
 
     context = {'form': form}
-    return render(request, 'register_user.html', context)
+    return render(request, 'AUTH/register_user.html', context)
 
 def register_care_givers(request):
     if request.method == 'POST':
@@ -33,12 +33,12 @@ def register_care_givers(request):
 
             messages.success(request, f'Your account has been created. You can log in now!')
             # return redirect('login')
-            return render(request, 'login.html')
+            return render(request, 'AUTH/home.html')
     else:
         form = CaregiversRegistrationForm()
 
     context = {'form': form}
-    return render(request, 'register_caregiver.html', context)
+    return render(request, 'AUTH/register_caregiver.html', context)
 
 
 
