@@ -16,3 +16,7 @@ def post_job(request):
 
     context = {'form': form}
     return render(request, 'job/post_job.html', context)
+
+def jobs(request):
+    mentors=Avaliable_jobs.objects.all()
+    return render(request, 'job/avaliable_jobs.html',{'mentors':mentors})

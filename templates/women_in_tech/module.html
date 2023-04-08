@@ -1,4 +1,11 @@
-{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% extends "../layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+
 {% block content %}
 <header>
     <style>
@@ -10,7 +17,7 @@
             margin-left: 100px;
         }
         #lists .card-body{
-            background-color: #7b876d;
+            background-color: #A865C9;
         }
         #lists .table-sm tr{
             color: aliceblue;
@@ -23,11 +30,10 @@
         }
     </style>
 </header>
-<br>
 <div class="row" id="lists">
     <div class="col-md-8">
         <div class="card card-body">
-            <h1 style="text-align: center;">Books</h1>
+            <h1 style="text-align: center;">Modules</h1>
             {% comment %} <button class="btn btn-primary"><a href="{% url 'register_book' %}">Add Book</a></button> {% endcomment %}
         </div>
         <div class="card card-body">
@@ -36,12 +42,14 @@
                     <th>book_name</th>
                     <th>Category</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 {% for i in modules %}
                 <tr>
                    
                     <td>{{i.book_name}}</td>
                     <td>{{i.skills}}</td>
+                    <td><a href="https://djangoforbeginners.com/introduction/"><button  type="button"  class="btn btn-primary">Download the book</button></a></td>
                 </tr>
                 {% endfor %}
             </table>
