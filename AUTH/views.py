@@ -8,6 +8,7 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.template import loader
 from women_in_tech import models as w_model
+from Job import models as J_model
 from .forms import *
 
 # def home(request):
@@ -18,12 +19,14 @@ def index(request):
     book=w_model.Traning_module.objects.all()
     mentor=w_model.Mentor.objects.all()
     care_giver=Care_giver.objects.all()
+    job=J_model.Avaliable_jobs.objects.all()
    
     book_count=book.count()
     mentor_count=mentor.count()
     care_count=care_giver.count()
+    job_count=job.count()
     
-    context = {'segment': 'index','book_count':book_count,'mentor_count':mentor_count,'care_count':care_count,}
+    context = {'segment': 'index','book_count':book_count,'mentor_count':mentor_count,'care_count':care_count,'job_count':job_count}
 
     html_template = loader.get_template('AUTH/index.html')
     return HttpResponse(html_template.render(context, request))

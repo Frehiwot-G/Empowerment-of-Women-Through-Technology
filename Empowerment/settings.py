@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AUTH',
-    'women_in_tech'
+    'women_in_tech',
+    'Job',
 ]
 
 MIDDLEWARE = [
