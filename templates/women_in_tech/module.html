@@ -1,0 +1,51 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% block content %}
+<header>
+    <style>
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight:bolder;
+        }
+        #lists{
+            margin-left: 100px;
+        }
+        #lists .card-body{
+            background-color: #7b876d;
+        }
+        #lists .table-sm tr{
+            color: aliceblue;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: aliceblue;
+        }
+    </style>
+</header>
+<br>
+<div class="row" id="lists">
+    <div class="col-md-8">
+        <div class="card card-body">
+            <h1 style="text-align: center;">Books</h1>
+            {% comment %} <button class="btn btn-primary"><a href="{% url 'register_book' %}">Add Book</a></button> {% endcomment %}
+        </div>
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>book_name</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+                {% for i in modules %}
+                <tr>
+                   
+                    <td>{{i.book_name}}</td>
+                    <td>{{i.skills}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}
