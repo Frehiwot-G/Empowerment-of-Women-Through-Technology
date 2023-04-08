@@ -1,4 +1,11 @@
-{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% extends "../layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+
 {% block content %}
 <header>
     <style>
@@ -10,7 +17,7 @@
             margin-left: 100px;
         }
         #lists .card-body{
-            background-color: #7b876d;
+            background-color: #A865C9;
         }
         #lists .table-sm tr{
             color: aliceblue;
@@ -23,7 +30,6 @@
         }
     </style>
 </header>
-<br>
 <div class="row" id="lists">
     <div class="col-md-8">
         <div class="card card-body">

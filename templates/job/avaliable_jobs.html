@@ -1,0 +1,68 @@
+
+{% extends "../layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+
+{% block content %}
+<header>
+    <style>
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight:bolder;
+        }
+        #lists{
+            margin-left: 100px;
+        }
+        #lists .card-body{
+            background-color: #A865C9;
+        }
+        #lists .table-sm tr{
+            color: aliceblue;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: aliceblue;
+        }
+    </style>
+</header>
+
+<div class="row" id="lists">
+    <div class="col-md-8">
+        <div class="card card-body">
+            <h1 style="text-align: center;">JOBS</h1>
+            {% comment %} <button class="btn btn-primary"><a href="{% url 'register_book' %}">Add Book</a></button> {% endcomment %}
+        </div>
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th> job_name</th>
+                    <th> job_description</th>
+                    <th> address</th>
+                    <th> job_type</th>
+                    <th> salary</th>
+                    <th> kind of support</th>
+                    <th></th>
+                </tr>
+                {% for i in mentors %}
+                <tr>
+                   
+                    <td>{{i.job_name}}</td>
+                    <td>{{i.job_description}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.job_type}}</td>
+                    <td>{{i.salary}}</td>
+                    <td>{{i.kind_of_support}}</td>
+                    <td><button  type="button" class="btn btn-primary">Apply</button></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,67 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo">
+        <a target="_blank" rel="noopener noreferrer" 
+           href="https://appseed.us/admin-dashboards/django-dashboard-material" class="simple-text logo-normal">
+           Empowerment of Women <br/>Through Technology 
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+
+          <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+            <a class="nav-link" href="../../auth/index">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
+            <a class="nav-link" href="../../jobs/post_job">
+              <i class="material-icons">work</i>
+              <p>Posting JOBS</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
+            <a class="nav-link" href="../../jobs/avaliable_job">
+              <i class="material-icons">work</i>
+              <p>Looking for JOBS</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-typography' in segment %} active {% endif %}">
+            <a class="nav-link" href="../../women_in_tech/module">
+              <i class="material-icons">library_books</i>
+              <p>Women in TECH</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-maps' in segment %} active {% endif %}">
+            {% comment %} <button class="btn btn-primary"><a href="{% url 'register_book' %}">Add Book</a></button> {% endcomment %}
+            {% comment %} <a class="nav-link" href="/ui-maps.html"> {% endcomment %}
+              <a class="nav-link" href="../../women_in_tech/mentors">
+              <i class="material-icons">person</i>
+              <p>Looking for Mentor</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-maps' in segment %} active {% endif %}">
+            <a class="nav-link" href="#">
+              <i class="material-icons">face</i>
+              <p>Mother hood advice</p>
+            </a>
+          </li>
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'logout' %}" >
+              <i class="material-icons">directions_run</i>
+              <p>Logout</p>
+            </a>
+          </li>
+
+          
+
+        {% else %}
+
+        {% endif %}
+        </ul>
+      </div>
+
+    </div>
