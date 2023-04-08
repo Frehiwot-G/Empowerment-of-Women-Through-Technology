@@ -1,8 +1,8 @@
 # Empowerment-of-Women-Through-Technology
 
-Tech sisters
+This project is developed by Tech sisters(Meron Abate and Frehiwot Gemechu)
 
-UI/UX designer and frontend developer
+database designer, UI/UX designer and frontend developer
 
      name: Meron Abate
 
@@ -14,7 +14,7 @@ https://www.figma.com/proto/4x6Kh64ZYYG6NGWuSfle6G/Tech-sisters?node-id=50-270&s
 
 
 
-Backend developer
+Backend developer and database designer
 
     name : Frehiwot Gemechu
     email address: frehiwotgem@gmail.com
