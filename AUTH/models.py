@@ -5,13 +5,14 @@ from django.utils import timezone
 
 class UserManager(BaseUserManager):
 
-    def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
+    def _create_user(self, email, ID_number,password, is_staff, is_superuser, **extra_fields):
         if not email:
             raise ValueError('Users must have an email address')
         now = timezone.now()
         email = self.normalize_email(email)
         user = self.model(
             email=email,
+            ID_number=ID_number,
             is_staff=is_staff,
             is_active=True,
             is_superuser=is_superuser,
@@ -32,10 +33,11 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser):
+    ID= models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=254, null=True, blank=True)
     last_name = models.CharField(max_length=254, null=True, blank=True)
+    ID_number=models.IntegerField(unique=True, blank=True)
     email = models.EmailField(max_length=254, unique=True)
-    ID_number=models.CharField(max_length=254,unique=True,primary_key=True, blank=True)
     is_staff = models.BooleanField(default=False)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -55,8 +57,8 @@ class Care_giver(models.Model):
     ID= models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=254, null=True, blank=True)
     last_name = models.CharField(max_length=254, null=True, blank=True)
-    email = models.EmailField(max_length=254, unique=True)
-    ID_number=models.ForeignKey("User", to_field='ID_number', on_delete=models.CASCADE)
+    email = models.EmailField(unique=True,max_length=254)
+    ID_number=models.IntegerField(unique=True, blank=True)
     address= models.CharField(max_length=254, null=True, blank=True)
     contact= models.CharField(max_length=254, null=True, blank=True)
     surety_name= models.CharField(max_length=254, null=True, blank=True)

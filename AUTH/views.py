@@ -17,11 +17,13 @@ from .forms import *
 def index(request):
     book=w_model.Traning_module.objects.all()
     mentor=w_model.Mentor.objects.all()
+    care_giver=Care_giver.objects.all()
    
     book_count=book.count()
     mentor_count=mentor.count()
+    care_count=care_giver.count()
     
-    context = {'segment': 'index','book_count':book_count,'mentor_count':mentor_count,}
+    context = {'segment': 'index','book_count':book_count,'mentor_count':mentor_count,'care_count':care_count,}
 
     html_template = loader.get_template('AUTH/index.html')
     return HttpResponse(html_template.render(context, request))
