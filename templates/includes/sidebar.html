@@ -1,3 +1,4 @@
+{% load google_translate %}
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
       <div class="logo">
         <a target="_blank" rel="noopener noreferrer" 
@@ -7,6 +8,10 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
+          <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+
+              {% google_translate type='vertical' language='amh' %}<p>Translate</p>
+          </li>
         {% if request.user.is_authenticated %}
 
           <li class="nav-item {% if 'index' in segment %} active {% endif %}">
