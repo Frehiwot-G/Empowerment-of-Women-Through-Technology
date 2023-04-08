@@ -5,6 +5,21 @@ from django.contrib.auth.models import User
 from .models import *
 
 
+class LoginForm(forms.Form):
+    email = forms.EmailField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Email address",
+                "class": "form-control"
+            }
+        ))
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "placeholder": "Password",
+                "class": "form-control"
+            }
+        ))
 
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(max_length=101)
