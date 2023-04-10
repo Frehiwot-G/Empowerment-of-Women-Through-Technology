@@ -1,6 +1,6 @@
 # Empowerment-of-Women-Through-Technology
 
-This project is developed by Tech sisters(Meron Abate and Frehiwot Gemechu)
+This project is developed by Tech sisters(Meron Abate and Frehiwot Gemechu) for the hackaton prepared by Women Techmakers Addis and this project gets the 3rd place.
 
 database designer, UI/UX designer and frontend developer
 
